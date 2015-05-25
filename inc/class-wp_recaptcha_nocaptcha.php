@@ -178,7 +178,7 @@ class WP_reCaptcha_NoCaptcha extends WP_reCaptcha_Captcha {
 		if ( typeof jQuery !== 'undefined' )
 			jQuery(document).ajaxComplete( function(evt,xhr,set){
 				if( xhr.responseText && xhr.responseText.indexOf('<?php echo $sitekey ?>') !== -1)
-					recaptchaLoadCallback();
+					setTimeout(recaptchaLoadCallback,50);
 			} );
 		
 		</script><?php
